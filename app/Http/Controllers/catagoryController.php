@@ -7,9 +7,11 @@ use Illuminate\Http\Request;
 
 class catagoryController extends Controller
 {
-    public functionshow
-    [
-        return(Catagory::all());
-    ];
+    public function index(){
+
+        return Catagory::all();
+    }
 
 }
+
+

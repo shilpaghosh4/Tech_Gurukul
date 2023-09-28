@@ -11,19 +11,19 @@ return new class extends Migration
      *
      * @return void
      */
-    public function up()
-    {Schema::create('catagoris',function (Blueprint $table){
-        $table->id();
-        $table->string('name');
-        $table->string('mata_title');
-        $table->string('image');
-        $table->text('keywords');
-        $table->text('meta_description');
-        $table->tinyInteger('status')->default('0');
-        $table->unsignedBigInteger('created_by')->nullable();
-        $table->timestamps();
+    public function up(): void
+    {
+        Schema::create('catagoris', function (Blueprint $table) {
+            $table->id();
+            $table->string('name');
+            $table->string('mata_title');
+            $table->string('image');
+            $table->text('keywords');
+            $table->text('meta_description');
+            $table->tinyInteger('status')->default('0');
+            $table->unsignedBigInteger('created_by')->nullable();
+            $table->timestamps();
         });
-
     }
 
     /**
@@ -31,8 +31,8 @@ return new class extends Migration
      *
      * @return void
      */
-    public function down()
+    public function down(): void
     {
-        //
+        Schema::drop('catagoris');
     }
 };
